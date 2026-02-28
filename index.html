@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freelance Hourly Rate Calculator - What Should You Actually Charge?</title>
+    <meta name="description" content="Free calculator for freelancers. Factors in self-employment taxes (15.3%), health insurance, business expenses, and non-billable hours to show your true minimum hourly rate.">
+    <meta name="keywords" content="freelance rate calculator, hourly rate calculator, freelancer pricing, what to charge, self-employment calculator">
+    <meta property="og:title" content="Freelance Hourly Rate Calculator">
+    <meta property="og:description" content="Find out what you should actually charge as a freelancer. Factors in taxes, expenses, and desired income.">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://tadaspi.github.io/freelance-rate-calculator/">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; background: #f8fafc; color: #1e293b; }
+        .container { max-width: 600px; margin: 0 auto; padding: 2rem 1rem; }
+        h1 { font-size: 1.75rem; margin-bottom: 0.5rem; color: #0f172a; }
+        .subtitle { color: #64748b; margin-bottom: 2rem; }
+        .card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 1.5rem; }
+        label { display: block; font-weight: 500; margin-bottom: 0.25rem; font-size: 0.875rem; }
+        input { width: 100%; padding: 0.75rem; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 1rem; margin-bottom: 1rem; }
+        input:focus { outline: none; border-color: #3b82f6; box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1); }
+        .result { background: #0f172a; color: white; padding: 1.5rem; border-radius: 12px; text-align: center; margin-bottom: 1.5rem; }
+        .result-number { font-size: 3rem; font-weight: 700; }
+        .result-label { color: #94a3b8; font-size: 0.875rem; }
+        .breakdown { font-size: 0.875rem; color: #64748b; }
+        .breakdown div { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f1f5f9; }
+        .pro-banner { background: linear-gradient(135deg, #3b82f6, #8b5cf6); color: white; padding: 1.5rem; border-radius: 12px; text-align: center; }
+        .pro-banner h3 { margin-bottom: 0.5rem; }
+        .pro-banner p { opacity: 0.9; font-size: 0.875rem; margin-bottom: 1rem; }
+        .pro-btn { display: inline-block; background: white; color: #3b82f6; padding: 0.75rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; }
+        .pro-btn:hover { opacity: 0.9; }
+        .tip { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 1rem; border-radius: 0 8px 8px 0; font-size: 0.875rem; margin-bottom: 1.5rem; }
+        footer { text-align: center; color: #94a3b8; font-size: 0.75rem; margin-top: 2rem; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        @media (max-width: 480px) { .grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>What Should You Actually Charge?</h1>
+        <p class="subtitle">Free calculator for freelancers. Most undercharge by 30-50%.</p>
+        
+        <div class="card">
+            <label for="income">Desired Annual Take-Home Pay ($)</label>
+            <input type="number" id="income" value="80000" min="0">
+            
+            <div class="grid">
+                <div>
+                    <label for="health">Monthly Health Insurance ($)</label>
+                    <input type="number" id="health" value="500" min="0">
+                </div>
+                <div>
+                    <label for="retirement">Monthly Retirement ($)</label>
+                    <input type="number" id="retirement" value="500" min="0">
+                </div>
+            </div>
+            
+            <label for="expenses">Annual Business Expenses ($)</label>
+            <input type="number" id="expenses" value="5000" min="0">
+            
+            <div class="grid">
+                <div>
+                    <label for="vacation">Vacation + Sick Days</label>
+                    <input type="number" id="vacation" value="20" min="0" max="365">
+                </div>
+                <div>
+                    <label for="billable">Billable Hours (%)</label>
+                    <input type="number" id="billable" value="60" min="1" max="100">
+                </div>
+            </div>
+            
+            <label for="hours">Hours Per Week</label>
+            <input type="number" id="hours" value="40" min="1" max="168">
+        </div>
+        
+        <div class="result">
+            <div class="result-label">Your Minimum Hourly Rate</div>
+            <div class="result-number" id="rate">$100</div>
+        </div>
+        
+        <div class="card breakdown" id="breakdown"></div>
+        
+        <div class="tip">
+            <strong>💡 Pro tip:</strong> This is your <em>minimum</em> rate. Many successful freelancers charge 20-50% above their minimum to build savings and handle slow months.
+        </div>
+        
+        <div class="pro-banner">
+            <h3>Pro Version — $19 One-Time</h3>
+            <p>Save multiple scenarios, compare rates, export to PDF, and get detailed tax breakdowns.</p>
+            <a href="https://buy.stripe.com/14A6oI1ri54wbsI6FjdnW0k" class="pro-btn">Get Pro Features</a>
+        </div>
+        
+        <footer>
+            <p>Built for freelancers who want to stop undercharging.</p>
+            <p style="margin-top: 0.5rem;">No signup. No tracking. Just math.</p>
+        </footer>
+    </div>
+    
+    <script>
+        function calculate() {
+            const income = parseFloat(document.getElementById('income').value) || 0;
+            const health = parseFloat(document.getElementById('health').value) || 0;
+            const retirement = parseFloat(document.getElementById('retirement').value) || 0;
+            const expenses = parseFloat(document.getElementById('expenses').value) || 0;
+            const vacation = parseFloat(document.getElementById('vacation').value) || 0;
+            const billable = parseFloat(document.getElementById('billable').value) || 60;
+            const hours = parseFloat(document.getElementById('hours').value) || 40;
+            
+            // Self-employment tax: 15.3%
+            // Estimated income tax: ~22%
+            const taxRate = 0.373;
+            const grossNeeded = income / (1 - taxRate);
+            const taxes = grossNeeded - income;
+            
+            const benefits = (health + retirement) * 12;
+            const totalNeeded = grossNeeded + benefits + expenses;
+            
+            const workWeeks = 52 - (vacation / 5);
+            const totalHours = workWeeks * hours;
+            const billableHours = totalHours * (billable / 100);
+            
+            const hourlyRate = totalNeeded / billableHours;
+            
+            document.getElementById('rate').textContent = '$' + Math.ceil(hourlyRate);
+            document.getElementById('breakdown').innerHTML = `
+                <div><span>Target take-home</span><span>$${income.toLocaleString()}</span></div>
+                <div><span>Taxes (SE + income ~37%)</span><span>$${Math.round(taxes).toLocaleString()}</span></div>
+                <div><span>Health + Retirement</span><span>$${benefits.toLocaleString()}</span></div>
+                <div><span>Business expenses</span><span>$${expenses.toLocaleString()}</span></div>
+                <div style="font-weight:600;border-bottom:none;"><span>Total needed/year</span><span>$${Math.round(totalNeeded).toLocaleString()}</span></div>
+                <div style="margin-top:0.5rem;"><span>Billable hours/year</span><span>${Math.round(billableHours).toLocaleString()}</span></div>
+            `;
+        }
+        
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('input', calculate);
+        });
+        
+        calculate();
+    </script>
+</body>
+</html>
