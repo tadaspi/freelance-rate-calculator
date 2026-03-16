@@ -1,59 +1,75 @@
-# Freelance Hourly Rate Calculator
+# Freelance Hourly Rate Calculator 2026
 
-**[Use the Free Calculator →](https://hourly-rate-calculator.tp-business.workers.dev)**
+> **Stop undercharging.** Most freelancers charge 30-50% less than they should because they forget about taxes, expenses, and non-billable time.
 
-Calculate what you should actually charge as a freelancer based on your expenses, taxes, and desired income.
+## 🔗 [Use the Free Calculator →](https://hourly-rate-calculator.tp-business.workers.dev)
 
-## Why Most Freelancers Undercharge
+No signup. No email. Just your number in 60 seconds.
 
-If you want **$80,000 take-home pay**, you actually need to bill **$120,000+** to cover:
+---
 
-- **15.3% self-employment tax** (Social Security + Medicare)
-- **~25% income tax** (federal + state)
-- **Health insurance** ($6,000-$12,000/year)
-- **Business expenses** (software, equipment, etc.)
-- **Non-billable hours** (30-40% of your time on admin, marketing, invoicing)
+## Why You Need This
+
+If you want **$80,000 take-home pay**, you need to charge **$100+/hour**, not $40/hour.
+
+Here's what most freelancers forget:
+
+| Hidden Cost | Amount |
+|------------|--------|
+| Self-employment tax | 15.3% of income |
+| Federal income tax | ~22-24% |
+| Health insurance | $6,000-12,000/year |
+| Non-billable time | 30-40% of hours |
+| Vacation/sick days | 3-4 weeks unpaid |
 
 ## The Formula
 
 ```
-Required Annual Revenue = (Desired Take-Home + Taxes + Expenses) / Billable Hours Ratio
-Hourly Rate = Required Annual Revenue / Billable Hours Per Year
+Minimum Hourly Rate = (Desired Income + Taxes + Expenses) / Billable Hours
 ```
 
 ## Example Calculation
 
-| Input | Value |
-|-------|-------|
+| Line Item | Amount |
+|-----------|--------|
 | Desired take-home | $80,000 |
-| Self-employment tax | $12,240 |
+| Self-employment tax (15.3%) | $12,240 |
 | Income tax (~25%) | $20,000 |
 | Health insurance | $8,000 |
 | Business expenses | $5,000 |
-| **Total needed** | **$125,240** |
-| Billable hours (60% of 2080) | 1,248 |
-| **Minimum hourly rate** | **$100/hr** |
+| **Total revenue needed** | **$125,240** |
+| Working weeks (52 - 3 vacation) | 49 |
+| Hours per week | 40 |
+| Billable % (after admin/marketing) | 60% |
+| **Billable hours/year** | **1,176** |
+| **Minimum hourly rate** | **$106/hour** |
 
-## Features
+## What the Calculator Includes
 
-✅ Accounts for self-employment taxes (15.3%)  
-✅ Factors in health insurance costs  
-✅ Calculates non-billable time percentage  
-✅ Shows your true minimum rate  
-✅ No signup or email required  
+✅ Self-employment tax (Social Security + Medicare)  
+✅ Federal income tax by bracket  
+✅ Health insurance costs  
+✅ Business expenses  
+✅ Non-billable hour adjustment  
+✅ Vacation and sick day calculation  
 
-## Use the Calculator
+## Who This Is For
 
-**[Calculate Your Rate Now →](https://hourly-rate-calculator.tp-business.workers.dev)**
-
-No signup. No email. Just your number.
-
----
+- Freelance developers and designers
+- Independent consultants
+- Copywriters and content creators
+- Photographers and videographers
+- Virtual assistants
+- Any self-employed professional
 
 ## Keywords
 
-freelance rate calculator, hourly rate calculator, freelancer pricing, consulting rate calculator, how much to charge freelancing, freelance pricing calculator, self-employed rate calculator, contractor hourly rate, freelance minimum rate
+freelance rate calculator, hourly rate calculator, freelancer pricing, self-employment tax calculator, 1099 calculator, contractor rate calculator, consulting rate calculator, freelance pricing guide 2026
 
 ## License
 
-MIT
+MIT - Free to use and share.
+
+---
+
+**[Calculate Your Rate Now →](https://hourly-rate-calculator.tp-business.workers.dev)**
